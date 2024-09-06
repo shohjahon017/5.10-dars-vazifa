@@ -2,10 +2,9 @@ const field = document.getElementById("field");
 const form = document.getElementById("form");
 const btn = document.getElementById("btn");
 const wrapper = document.querySelector("#todo-item");
-const deleteBtn = document.querySelector(".fa-trash");
 
 function validate(field) {
-  if (field.value.legth < 5) {
+  if (field.value.length < 5) {
     alert("Todo kamida 6 ta harfdan iborat bo`lsin");
     field.focus();
     field.style.outlineColor = "red";
@@ -37,10 +36,6 @@ form.addEventListener("submit", function (event) {
           <i class="fa-solid fa-trash"></i>
         </div>
       </div>`;
-  deleteBtn &&
-    deleteBtn.addEventListener("click", function () {
-      wrapper.remove(div);
-    });
 
   wrapper.append(div);
   field.value = "";
